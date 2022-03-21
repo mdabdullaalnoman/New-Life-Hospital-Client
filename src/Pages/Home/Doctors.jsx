@@ -1,21 +1,27 @@
 import React, { useEffect, useState } from 'react';
 
 const Doctors = () => {
-    const [doctors , setDoctors] = useState([]);
+    const [doctors, setDoctors] = useState([]);
 
-    useEffect( () => {
+    useEffect(() => {
         fetch('./doctors.JSON')
-        .then(res => res.json())
-        .then (data => setDoctors(data))
+            .then(res => res.json())
+            .then(data => setDoctors(data))
 
-        .then(err => console.log(err));
-    },[]);
+            .then(err => console.log(err));
+    }, []);
 
     console.log(doctors);
 
     return (
         <div>
-            <h1>this is doctor</h1>
+            {
+                doctors.map(doctor =>
+                    <div>
+                        
+                    </div>
+                )
+            }
         </div>
     );
 };
